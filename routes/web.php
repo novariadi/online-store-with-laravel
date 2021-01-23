@@ -24,3 +24,4 @@ Route::post('/Daftar', [Login::class, 'register']);
 Route::post('/Masuk', [Login::class, 'Masuk']);
 Route::get('/Keluar', [Login::class, 'Keluar']);
 Route::post('/AddCart', [Order::class, 'Order']);
+Route::get('/Keranjang', [Order::class, 'Keranjang']);
