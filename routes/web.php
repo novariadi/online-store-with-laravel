@@ -20,3 +20,4 @@ Route::get('/', [Utama::class, 'index']);
 Route::post('/pushData', [Utama::class, 'store']);
 Route::get('/Login', [Login::class, 'index']);
 Route::post('/Daftar', [Login::class, 'register']);
+Route::post('/Masuk', [Login::class, 'Masuk']);

@@ -94,13 +94,9 @@
                     <div class="login-form">
                         <!--login form-->
                         <h2>Login to your account</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email Address" />
-                            <span>
-                                <input type="checkbox" class="checkbox">
-                                Keep me signed in
-                            </span>
+                        <form action="/Masuk" method="POST">
+                            <input type="email" placeholder="email" name="email" />
+                            <input type="password" placeholder="password" name="password" />
                             <button type="submit" class="btn btn-default">Login</button>
                         </form>
                     </div>
