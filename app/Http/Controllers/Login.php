@@ -36,4 +36,10 @@ class Login extends Controller
             echo "Anda gagal login";
         }
     }
+
+    public function Keluar()
+    {
+        Session::forget('id_user');
+        return redirect('/');
+    }
 }
