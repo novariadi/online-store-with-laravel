@@ -27,3 +27,5 @@ Route::post('/AddCart', [Order::class, 'Order']);
 Route::get('/Keranjang', [Order::class, 'Keranjang']);
 Route::get('/Checkout', [Order::class, 'Checkout']);
 Route::get('/Checkout_list', [Order::class, 'Checkout_list']);
+Route::get('/Confirm', [Order::class, 'Confirm']);
+Route::post('/Konfirm', [Order::class, 'Confirm_Simpan']);
