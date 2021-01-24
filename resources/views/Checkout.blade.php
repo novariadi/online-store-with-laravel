@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Cart | E-Shopper</title>
+    <title>Checkout | E-Shopper</title>
     <link href="/BahanStudy/css/bootstrap.min.css" rel="stylesheet">
     <link href="/BahanStudy/css/font-awesome.min.css" rel="stylesheet">
     <link href="/BahanStudy/css/prettyPhoto.css" rel="stylesheet">
@@ -15,12 +15,12 @@
     <link href="/BahanStudy/css/main.css" rel="stylesheet">
     <link href="/BahanStudy/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="/BahanStudy/images/ico/favicon.ico">
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/BahanStudy/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/BahanStudy/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/BahanStudy//BahanStudy/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/BahanStudy/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/BahanStudy/images/ico/apple-touch-icon-57-precomposed.png">
 </head>
@@ -92,9 +92,16 @@
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Shopping Cart</li>
+                    <li class="active">Check out</li>
                 </ol>
             </div>
+            <!--/breadcrums-->
+
+
+            <div class="review-payment">
+                <h2>Review & Payment</h2>
+            </div>
+
             <div class="table-responsive cart_info">
                 <table class="table table-condensed">
                     <thead>
@@ -109,50 +116,46 @@
                     </thead>
                     <tbody>
                         <?php $total = 0; ?>
-                        @foreach($keranjang as $krj)
+                        @foreach($checkout as $ckt)
                         <tr>
                             <td class="cart_product">
-                                <a href=""><img src="/data_file/{{$krj->gambar}}" alt="" width="100px"></a>
+                                <a href=""><img src="/data_file/{{$ckt->gambar}}" alt="" width="100px"></a>
                             </td>
                             <td class="cart_description">
-                                <h4><a href="">{{$krj->nama_produk}}</a></h4>
+                                <h4><a href="">{{$ckt->nama_produk}}</a></h4>
                             </td>
                             <td class="cart_price">
-                                <p>Rp {{$krj->harga}}</p>
+                                <p>Rp {{$ckt->harga}}</p>
                             </td>
                             <td class="cart_quantity">
-                                {{$krj->jumlah}}
+                                {{$ckt->jumlah}}
                             </td>
                             <td class="cart_total">
-                                <p class="cart_total_price">Rp {{$krj->harga * $krj->jumlah}}</p>
+                                <p class="cart_total_price">Rp{{$ckt->harga * $ckt->jumlah}}</p>
+                        </tr>
+                        <?php $total += ($ckt->jumlah * $ckt->harga) ?>
+                        @endforeach
+
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                            <td colspan="2">
+                                <table class="table table-condensed total-result">
+                                    <tr>
+                                        <td>Total</td>
+                                        <td><span>Rp{{$total}}</span></td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
-                        <?php $total += ($krj->harga * $krj->jumlah); ?>
-                        @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="payment-options">
+
             </div>
         </div>
     </section>
     <!--/#cart_items-->
-
-    <section id="do_action">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                </div>
-                <div class="col-sm-6">
-                    <div class="total_area">
-                        <ul>
-                            <li>Total <span>Rp {{$total}}</span></li>
-                        </ul>
-                        <a class="btn btn-default update" href="/Checkout">Check Out</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/#do_action-->
 
     <footer id="footer">
         <!--Footer-->
@@ -160,7 +163,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                    <p class="pull-left">Copyright (c) 2013 E-SHOPPER Inc. All rights reserved.</p>
                     <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
                 </div>
             </div>
@@ -168,7 +171,6 @@
 
     </footer>
     <!--/Footer-->
-
 
 
     <script src="/BahanStudy/js/jquery.js"></script>
