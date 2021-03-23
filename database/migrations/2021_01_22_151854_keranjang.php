@@ -13,10 +13,11 @@ class Keranjang extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_keranjang', function(Blueprint $table){
+        Schema::create('tbl_keranjang', function (Blueprint $table) {
             $table->increments('id_keranjang');
             $table->string('id_user');
             $table->string('id_barang');
+            $table->integer('jumlah');
         });
     }
 

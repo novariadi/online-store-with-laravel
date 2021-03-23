@@ -19,7 +19,7 @@ class ViewKeranjang extends Migration
         /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
         [DEFINER = { user | CURRENT_USER }]
         [SQL SECURITY { DEFINER | INVOKER }]*/
-        VIEW `db_store`.`keranjang`
+        VIEW `onlinestore`.`keranjang`
         AS
         (SELECT
         `tbl_keranjang`.`id_keranjang` AS `id_keranjang`,

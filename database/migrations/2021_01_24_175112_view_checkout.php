@@ -20,7 +20,7 @@ class ViewCheckout extends Migration
                 /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
                 [DEFINER = { user | CURRENT_USER }]
                 [SQL SECURITY { DEFINER | INVOKER }]*/
-                VIEW `db_store`.`checkout`
+                VIEW `onlinestore`.`checkout`
                 AS
             (SELECT
             `tbl_checkout`.`id_checkout` AS `id_checkout`,
